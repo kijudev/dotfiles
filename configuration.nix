@@ -78,6 +78,10 @@
     zed-editor
     obsidian
     brave
+    nodejs
+    pnpm
+    deno
+    go
   ];
 
   stylix = {
