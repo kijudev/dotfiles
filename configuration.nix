@@ -82,6 +82,9 @@
     pnpm
     deno
     go
+    vscode
+    httpie
+    nixfmt-rfc-style
   ];
 
   stylix = {
@@ -118,4 +121,7 @@
   system.stateVersion = "24.05";
 
   services.flatpak.enable = true;
+  programs.steam = {
+    enable = true;
+  };
 }
