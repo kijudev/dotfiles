@@ -124,4 +124,6 @@
   programs.steam = {
     enable = true;
   };
+
+  nix.settings.experimental-features = ["flakes" "nix-command"];
 }
