@@ -29,6 +29,7 @@
   };
 
   stylix.targets.kitty.enable = true;
+  stylix.targets.helix.enable = false;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -44,7 +45,25 @@
   programs.helix = {
     enable = true;
     settings = {
-      #theme = "cattpuccin-mocha";
+      theme = "rose_pine_custom";
+    };
+    languages.language = [
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+      }
+      {
+        name = "ocaml";
+        auto-format = true;
+        formatter.command = "${pkgs.ocamlformat_0_22_4}/bin/ocamlformat";
+      }
+    ];
+    themes = {
+      rose_pine_custom = {
+        "inherits" = "rose_pine";
+        "ui.background" = { fg = "foreground"; };
+      };
     };
   };
 }
