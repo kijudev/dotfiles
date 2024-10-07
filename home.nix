@@ -45,7 +45,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "rose_pine_custom";
+      theme = "base16_transparent";
     };
     languages.language = [
       {
@@ -57,13 +57,8 @@
         name = "ocaml";
         auto-format = true;
         formatter.command = "${pkgs.ocamlformat_0_22_4}/bin/ocamlformat";
+        formatter.args = ["-" "--impl"];
       }
     ];
-    themes = {
-      rose_pine_custom = {
-        "inherits" = "rose_pine";
-        "ui.background" = { fg = "foreground"; };
-      };
-    };
   };
 }
