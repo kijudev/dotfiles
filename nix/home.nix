@@ -19,6 +19,9 @@
       obsidian
       rawtherapee
       vesktop
+      proton-plus
+      protonvpn-gui
+      protonmail-desktop
 
       pkgs.iosevka
       pkgs.nerd-fonts.iosevka
