@@ -19,7 +19,6 @@
       obsidian
       rawtherapee
       vesktop
-      proton-plus
       protonvpn-gui
       protonmail-desktop
 

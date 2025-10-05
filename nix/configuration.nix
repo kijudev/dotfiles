@@ -15,6 +15,7 @@
     helix
     git
 
+    flyctl
     nil
     lshw
     tpm2-tools
