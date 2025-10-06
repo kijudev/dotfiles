@@ -157,9 +157,33 @@
           ];
         };
       }
+      {
+        name = "rust";
+        auto-format = true;
+        language-servers = [ "rust-analyzer" ];
+      }
     ];
 
     languages.language-server = {
+      rust-analyzer = {
+        command = "rust-analyzer";
+        args = [
+          # These arguments are optional but common for nix/flake usage
+          # "--sysroot"
+          # (since you are using a dev shell, rust-analyzer should find components)
+        ];
+        config = {
+          # Common rust-analyzer settings (optional but useful)
+          checkOnSave = true;
+          inlayHints = {
+            bindingModeHints = true;
+            chainingHints = true;
+            closureCaptureHints = true;
+            parameterHints = true;
+            typeHints = true;
+          };
+        };
+      };
       clangd = {
         command = "clangd";
         args = [
