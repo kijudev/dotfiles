@@ -20,6 +20,7 @@
     lshw
     tpm2-tools
     sbctl
+    mathematica
 
     gnomeExtensions.blur-my-shell
     gnomeExtensions.pop-shell
