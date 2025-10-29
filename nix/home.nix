@@ -33,6 +33,41 @@
   home.stateVersion = "25.11";
   fonts.fontconfig.enable = true;
 
+  programs.hyprpanel = {
+    settings = {
+      layout = {
+        bar.layouts = {
+          "0" = {
+            left = [
+              "dashboard"
+              "workspaces"
+            ];
+            middle = [ "media" ];
+            right = [
+              "volume"
+              "systray"
+              "notifications"
+            ];
+          };
+        };
+      };
+
+      bar.launcher.autoDetectIcon = true;
+      bar.workspaces.show_icons = true;
+
+      menus.clock = {
+        time = {
+          military = true;
+          hideSeconds = true;
+        };
+        weather.unit = "metric";
+      };
+
+      menus.dashboard.directories.enabled = false;
+      menus.dashboard.stats.enable_gpu = true;
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Kiju";
@@ -59,7 +94,7 @@
   programs.kitty = {
     enable = true;
     extraConfig = ''
-      background_opacity 0.85
+      background_opacity 1
       background_blur 1
       font_size 14
       hide_window_decorations yes
@@ -167,13 +202,8 @@
     languages.language-server = {
       rust-analyzer = {
         command = "rust-analyzer";
-        args = [
-          # These arguments are optional but common for nix/flake usage
-          # "--sysroot"
-          # (since you are using a dev shell, rust-analyzer should find components)
-        ];
+        args = [ ];
         config = {
-          # Common rust-analyzer settings (optional but useful)
           checkOnSave = true;
           inlayHints = {
             bindingModeHints = true;
