@@ -10,6 +10,7 @@
     homeDirectory = "/home/kiju";
     packages = with pkgs; [
       helix
+      zellij
 
       nixfmt-rfc-style
       nil
@@ -250,34 +251,6 @@
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = [ "qemu:///system" ];
       uris = [ "qemu:///system" ];
-    };
-    "org/gnome/shell" = {
-      disable-user-extensions = false;
-      enables-extensions = [
-        "org/gnome/shell/extensions/blur-my-shell"
-        "org/gnome/shell/extensions/pop-shell"
-      ];
-    };
-    "org/gnome/shell/extensions/blur-my-shell" = {
-      "blacklist" = "@as []";
-      "blur-on-overview" = false;
-      "brightness" = "1.0";
-      "customize" = true;
-      "enable-all" = true;
-      "opacity" = "250";
-      "sigma" = "59";
-      "blur" = true;
-    };
-    "org/gnome/shell/extensions/pop-shell" = {
-      "active-hint" = false;
-      "active-hint-border-radius" = "uint32 6";
-      "tile-by-default" = true;
-      "gap-inner" = "uint32 2";
-      "gap-outer" = "uint32 2";
-      "mouse-cursor-follows-active-window" = true;
-      "show-skip-taskbar" = true;
-      "show-title" = true;
-      "stacking-with-mouse" = true;
     };
   };
 }
