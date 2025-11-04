@@ -37,13 +37,18 @@
   programs.zellij = {
     enable = true;
 
-    settings = {
-      theme = "warm-pastel-on-black";
-      pane-frames = false;
+    # 1. Define the Minimal Layout
+    extraLayouts = {
+      "minimal.kdl" = ''
+        layout {
+            pane
+        }
+      '';
     };
 
-    themes = {
-      "warm-pastel-on-black" = builtins.readFile ./themes/warm-pastel-on-black.kdl;
+    settings = {
+      pane-frames = false;
+      default_layout = "minimal"; # Uses the 'minimal.kdl' file you defined above
     };
   };
 
