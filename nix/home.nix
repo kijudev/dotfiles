@@ -34,38 +34,16 @@
   home.stateVersion = "25.11";
   fonts.fontconfig.enable = true;
 
-  programs.hyprpanel = {
+  programs.zellij = {
+    enable = true;
+
     settings = {
-      layout = {
-        bar.layouts = {
-          "0" = {
-            left = [
-              "dashboard"
-              "workspaces"
-            ];
-            middle = [ "media" ];
-            right = [
-              "volume"
-              "systray"
-              "notifications"
-            ];
-          };
-        };
-      };
+      theme = "warm-pastel-on-black";
+      pane-frames = false;
+    };
 
-      bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
-
-      menus.clock = {
-        time = {
-          military = true;
-          hideSeconds = true;
-        };
-        weather.unit = "metric";
-      };
-
-      menus.dashboard.directories.enabled = false;
-      menus.dashboard.stats.enable_gpu = true;
+    themes = {
+      "warm-pastel-on-black" = builtins.readFile ./themes/warm-pastel-on-black.kdl;
     };
   };
 
