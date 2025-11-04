@@ -37,18 +37,10 @@
   programs.zellij = {
     enable = true;
 
-    # 1. Define the Minimal Layout
-    extraLayouts = {
-      "minimal.kdl" = ''
-        layout {
-            pane
-        }
-      '';
-    };
-
     settings = {
-      pane-frames = false;
-      default_layout = "minimal"; # Uses the 'minimal.kdl' file you defined above
+      pane-frames = true;
+      simplified_ui = true;
+      default_layout = "compact";
     };
   };
 
