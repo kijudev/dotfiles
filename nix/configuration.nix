@@ -22,8 +22,10 @@
     sbctl
     mathematica
 
+    gnome-tweaks
     gnomeExtensions.blur-my-shell
-    gnomeExtensions.pop-shell
+    nerd-fonts.blex-mono
+    ibm-plex
   ];
 
   # Users
@@ -56,12 +58,10 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   services.printing.enable = true;
 
-  # i18n
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "pl2";
@@ -84,13 +84,8 @@
   };
 
   services.xserver.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
-  services.desktopManager.cosmic.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Audio
   services.pulseaudio.enable = false;
@@ -160,7 +155,6 @@
     }
   '';
 
-  # Nix
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

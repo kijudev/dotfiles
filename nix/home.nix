@@ -227,5 +227,11 @@
       autoconnect = [ "qemu:///system" ];
       uris = [ "qemu:///system" ];
     };
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "blur-my-shell@aunetx"
+      ];
+      disable-user-extensions = false;
+    };
   };
 }
