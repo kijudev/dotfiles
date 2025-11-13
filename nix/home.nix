@@ -3,7 +3,8 @@
   ...
 }:
 {
-  imports = [ ];
+  imports = [
+  ];
 
   home = {
     username = "kiju";
