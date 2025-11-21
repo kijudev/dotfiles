@@ -23,6 +23,9 @@
     sbctl
     mathematica
 
+    nodejs_24
+    pnpm
+
     gnome-tweaks
     gnomeExtensions.blur-my-shell
     nerd-fonts.blex-mono

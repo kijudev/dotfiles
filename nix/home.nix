@@ -12,6 +12,8 @@
     packages = with pkgs; [
       helix
       zellij
+      zed-editor
+      vscode-fhs
 
       nixfmt-rfc-style
       nil
@@ -131,6 +133,10 @@
           command = "clang-format";
           args = [ "--style=file" ];
         };
+        indent = {
+          tab-width = 4;
+          unit = "    ";
+        };
       }
       {
         name = "c";
@@ -138,6 +144,10 @@
         formatter = {
           command = "clang-format";
           args = [ "--style=file" ];
+        };
+        indent = {
+          tab-width = 4;
+          unit = "    ";
         };
       }
       {
