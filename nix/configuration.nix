@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     helix
     git
+    zed-editor
 
     flyctl
     nil

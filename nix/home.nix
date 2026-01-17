@@ -21,6 +21,8 @@
 
       vlc
       obsidian
+      logseq
+      xournalpp
       rawtherapee
       vesktop
       protonvpn-gui
@@ -217,7 +219,7 @@
 
         config = {
           clangd = {
-            fallbackFlags = [ "-std=c++20" ];
+            fallbackFlags = [ "-std=c++23" ];
           };
           inlayHints = {
             typeHints = true;
