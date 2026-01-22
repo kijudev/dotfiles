@@ -186,6 +186,14 @@
         auto-format = true;
         language-servers = [ "rust-analyzer" ];
       }
+      {
+        name = "haskell";
+        auto-format = true;
+        formatter = {
+          command = "ormolu";
+        };
+        language-servers = [ "haskell-language-server" ];
+      }
     ];
 
     languages.language-server = {
