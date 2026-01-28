@@ -24,7 +24,7 @@
       logseq
       xournalpp
       rawtherapee
-      vesktop
+      discord
       protonvpn-gui
       protonmail-desktop
 
