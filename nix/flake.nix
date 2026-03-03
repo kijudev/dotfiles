@@ -1,3 +1,5 @@
+# Flake entry point — defines inputs (nixpkgs, home-manager, stylix)
+# and wires them together into the nixosConfigurations output.
 {
   description = "Kiju's nix config";
 
@@ -9,8 +11,6 @@
 
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =

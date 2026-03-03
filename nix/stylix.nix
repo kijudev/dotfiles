@@ -1,3 +1,4 @@
+# Stylix theming — Woodland base16 colour scheme, polarity, and system fonts.
 {
   pkgs,
   ...
@@ -29,18 +30,18 @@
     polarity = "dark";
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.blex-mono;
-        name = "BlexMono Nerd Font";
+        package = pkgs.nerd-fonts.iosevka-term;
+        name = "IosevkaTerm Nerd Font";
       };
 
       sansSerif = {
-        package = pkgs.ibm-plex;
-        name = "IBM Plex Sans";
+        package = pkgs.iosevka;
+        name = "Iosevka Aile";
       };
 
       serif = {
-        package = pkgs.ibm-plex;
-        name = "IBM Plex Serif";
+        package = pkgs.iosevka;
+        name = "Iosevka Etoile";
       };
     };
   };
