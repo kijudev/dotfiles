@@ -1,5 +1,5 @@
 # System programs — Firefox, Zsh, Flatpak, GPG agent, Steam, and system-level packages.
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -11,6 +11,9 @@
     nil # Nix
     marksman # Markdown
     tinymist # Typst
+
+    # Browser
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.firefox.enable = true;
