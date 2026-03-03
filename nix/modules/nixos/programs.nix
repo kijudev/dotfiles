@@ -7,7 +7,7 @@
     tpm2-tools
     sbctl
 
-    # Language servers (system-wide)
+    # Language servers
     nil # Nix
     marksman # Markdown
     tinymist # Typst
