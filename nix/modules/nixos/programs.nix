@@ -12,8 +12,9 @@
     marksman # Markdown
     tinymist # Typst
 
-    # Browser
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # Networking bullshit
+    gns3-gui
+    tcpdump
   ];
 
   programs.firefox.enable = true;
