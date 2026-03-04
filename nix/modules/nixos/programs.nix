@@ -31,4 +31,14 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
+
+  # Wireshark USB traffic capture
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
+  '';
 }
