@@ -25,9 +25,8 @@
     discord
     protonvpn-gui
     protonmail-desktop
-    mathematica
     gnome-tweaks
     gnomeExtensions.blur-my-shell
-
+    onlyoffice-desktopeditors
   ];
 }

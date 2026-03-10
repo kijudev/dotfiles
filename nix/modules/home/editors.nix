@@ -261,7 +261,8 @@
           "--fallback-style=llvm"
           "--header-insertion=iwyu"
           "--pch-storage=memory"
-          "--cross-file-rename"
+          # ERROR: Makes Clangd crash on llvm_latest
+          # "--cross-file-rename"
           "--log=error"
         ];
         config = {

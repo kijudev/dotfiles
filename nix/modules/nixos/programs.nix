@@ -13,8 +13,9 @@
     tinymist # Typst
 
     # Networking bullshit
-    gns3-gui
+    # gns3-gui
     tcpdump
+    cisco-packet-tracer_9
   ];
 
   programs.firefox.enable = true;
