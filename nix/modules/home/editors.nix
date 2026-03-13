@@ -1,5 +1,112 @@
 # Editors — Helix configuration with editor UI settings, per-language formatting, and language server setup.
+{ inputs, pkgs, ... }:
 {
+  imports = [
+    inputs.nvf.homeManagerModules.default
+  ];
+
+  programs.nvf = {
+    enable = true;
+
+    settings = {
+      vim = {
+        options = {
+          number = true;
+          relativenumber = true;
+          shiftwidth = 4;
+          tabstop = 4;
+        };
+
+        visuals = {
+          indent-blankline.enable = true;
+        };
+
+        statusline.lualine.enable = true;
+
+        autocomplete.nvim-cmp.enable = true;
+        telescope.enable = true;
+
+        extraPlugins = {
+          oil = {
+            package = pkgs.vimPlugins.oil-nvim;
+            setup = "require('oil').setup()";
+          };
+        };
+
+        keymaps = [
+          {
+            key = "-";
+            mode = "n";
+            action = "<cmd>Oil<CR>";
+            desc = "Open Parent Directory (Oil)";
+          }
+        ];
+
+        lsp = {
+          enable = true;
+          formatOnSave = true;
+          inlayHints.enable = true;
+
+          servers = {
+            clangd.package = null;
+            rust_analyzer.package = null;
+          };
+        };
+
+        debugger = {
+          nvim-dap = {
+            enable = true;
+            ui.enable = true;
+          };
+        };
+
+        languages = {
+          enableLSP = true;
+          enableTreesitter = true;
+          enableFormat = true;
+
+          clang = {
+            enable = true;
+            lsp.enable = true;
+            dap.enable = true;
+          };
+
+          rust = {
+            enable = true;
+            lsp.enable = true;
+          };
+
+          go = {
+            enable = true;
+            lsp.enable = true;
+          };
+
+          ts = {
+            enable = true;
+            lsp.enable = true;
+            format.enable = true;
+          };
+
+          html.enable = true;
+          css.enable = true;
+
+          markdown.enable = true;
+
+          nix = {
+            enable = true;
+            lsp.server = "nil";
+            format.type = [ "nixfmt" ];
+          };
+
+          typst = {
+            enable = true;
+            lsp.enable = true;
+          };
+        };
+      };
+    };
+  };
+
   programs.helix = {
     enable = true;
 
