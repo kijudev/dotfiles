@@ -16,6 +16,9 @@
     # gns3-gui
     tcpdump
     cisco-packet-tracer_9
+
+    wl-clipboard
+    xclip
   ];
 
   programs.firefox.enable = true;

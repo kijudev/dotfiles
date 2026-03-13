@@ -17,6 +17,10 @@
           tabstop = 4;
         };
 
+        clipboard = {
+          registers = "unnamedplus";
+        };
+
         visuals = {
           indent-blankline.enable = true;
         };
