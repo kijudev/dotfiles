@@ -44,7 +44,31 @@
             action = "<cmd>Oil<CR>";
             desc = "Open Parent Directory (Oil)";
           }
+          {
+            key = "<leader>rn";
+            mode = "n";
+            action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+            desc = "Rename Variable";
+          }
+          {
+            key = "<leader>ca";
+            mode = "n";
+            action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+            desc = "Code Action";
+          }
+          {
+            key = "gd";
+            mode = "n";
+            action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+            desc = "Go To Definition";
+          }
         ];
+
+        luaConfigRC.diagnostics = ''
+          vim.diagnostic.config({
+            virtual_text = true,
+          })
+        '';
 
         lsp = {
           enable = true;
