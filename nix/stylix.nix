@@ -54,6 +54,30 @@
     # };
 
     # Monochromatic Beige with Sprinkled Colors
+    # base16Scheme = {
+    #   base00 = "050505"; # Almost pure black
+    #   base01 = "111111"; # Slightly lighter black for elevated surfaces
+    #   base02 = "1c1b1a"; # Selection background
+    #   base03 = "4d4a47"; # Comments (muted grey-beige)
+    #   base04 = "7a7571"; # Dark foreground
+    #   base05 = "e6e1d8"; # Default text (super light beige)
+    #   base06 = "f0ece4"; # Light text
+    #   base07 = "faf8f5"; # Lightest text/background
+    #
+    #   # Sprinkled toned colors
+    #   base08 = "c27e7e"; # Red (muted)
+    #   base09 = "c49c76"; # Orange (muted)
+    #   base0A = "c2b682"; # Yellow (muted)
+    #   base0B = "96a885"; # Green (muted)
+    #
+    #   # Monochromatic accents (Beige/Grey replacing typical syntax colors)
+    #   base0C = "b5b0a3"; # Cyan mapped to muted beige
+    #   base0D = "c2bdaf"; # Blue mapped to light beige
+    #   base0E = "d1ccc0"; # Purple mapped to very light beige
+    #   base0F = "8f8b84"; # Brown mapped to dark beige
+    # };
+
+    # 100% Monochromatic Beige & White
     base16Scheme = {
       base00 = "050505"; # Almost pure black
       base01 = "111111"; # Slightly lighter black for elevated surfaces
@@ -62,36 +86,34 @@
       base04 = "7a7571"; # Dark foreground
       base05 = "e6e1d8"; # Default text (super light beige)
       base06 = "f0ece4"; # Light text
-      base07 = "faf8f5"; # Lightest text/background
+      base07 = "ffffff"; # Lightest text/background (pure white)
 
-      # Sprinkled toned colors
-      base08 = "c27e7e"; # Red (muted)
-      base09 = "c49c76"; # Orange (muted)
-      base0A = "c2b682"; # Yellow (muted)
-      base0B = "96a885"; # Green (muted)
-
-      # Monochromatic accents (Beige/Grey replacing typical syntax colors)
-      base0C = "b5b0a3"; # Cyan mapped to muted beige
-      base0D = "c2bdaf"; # Blue mapped to light beige
-      base0E = "d1ccc0"; # Purple mapped to very light beige
-      base0F = "8f8b84"; # Brown mapped to dark beige
+      # 100% Monochromatic accents (shades of beige/white/grey)
+      base08 = "dcd8cf"; # Shade 1
+      base09 = "d4cfc3"; # Shade 2
+      base0A = "ccc6b8"; # Shade 3
+      base0B = "c4bead"; # Shade 4
+      base0C = "bdb6a3"; # Shade 5
+      base0D = "b5b0a3"; # Shade 6
+      base0E = "adaba1"; # Shade 7
+      base0F = "a6a59d"; # Shade 8
     };
 
     polarity = "dark";
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.iosevka-term;
-        name = "IosevkaTerm Nerd Font";
+        package = pkgs.nerd-fonts.blex-mono;
+        name = "BlexMono Nerd Font";
       };
 
       sansSerif = {
-        package = pkgs.iosevka;
-        name = "Iosevka Aile";
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Sans";
       };
 
       serif = {
-        package = pkgs.iosevka;
-        name = "Iosevka Etoile";
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Serif";
       };
     };
   };

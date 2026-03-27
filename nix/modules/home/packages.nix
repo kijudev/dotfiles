@@ -28,5 +28,9 @@
     gnome-tweaks
     gnomeExtensions.blur-my-shell
     onlyoffice-desktopeditors
+
+    # Clankers
+    github-copilot-cli
+    gemini-cli
   ];
 }
