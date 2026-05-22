@@ -1,4 +1,3 @@
-# Locale and keyboard — timezone, English UI with Polish regional formats, and Polish keyboard layout.
 {
   time.timeZone = "Europe/Warsaw";
 

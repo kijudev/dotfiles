@@ -1,6 +1,4 @@
-# Hardware configuration — Nvidia GPU drivers, modesetting, and PRIME sync for Intel/Nvidia hybrid graphics.
 { config, ... }:
-
 {
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];

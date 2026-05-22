@@ -1,6 +1,4 @@
-# Boot configuration — kernel, systemd-boot, GRUB (with Windows dual-boot entry), TPM and systemd initrd.
 { pkgs, ... }:
-
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -22,7 +20,6 @@
     '';
   };
 
-  # TPM + systemd initrd required for secure boot and Windows dual-boot
   security.tpm2.enable = true;
   boot.initrd.systemd.enable = true;
 }

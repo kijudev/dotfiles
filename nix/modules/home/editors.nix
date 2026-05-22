@@ -1,140 +1,4 @@
-# Editors — Helix configuration with editor UI settings, per-language formatting, and language server setup.
-{ inputs, pkgs, ... }:
 {
-  imports = [
-    inputs.nvf.homeManagerModules.default
-  ];
-
-  programs.nvf = {
-    enable = true;
-
-    settings = {
-      vim = {
-        options = {
-          number = true;
-          relativenumber = true;
-          shiftwidth = 4;
-          tabstop = 4;
-        };
-
-        clipboard = {
-          registers = "unnamedplus";
-        };
-
-        visuals = {
-          indent-blankline.enable = true;
-        };
-
-        statusline.lualine.enable = true;
-
-        autocomplete.nvim-cmp.enable = true;
-        telescope.enable = true;
-
-        extraPlugins = {
-          oil = {
-            package = pkgs.vimPlugins.oil-nvim;
-            setup = "require('oil').setup()";
-          };
-        };
-
-        keymaps = [
-          {
-            key = "-";
-            mode = "n";
-            action = "<cmd>Oil<CR>";
-            desc = "Open Parent Directory (Oil)";
-          }
-          {
-            key = "<leader>rn";
-            mode = "n";
-            action = "<cmd>lua vim.lsp.buf.rename()<CR>";
-            desc = "Rename Variable";
-          }
-          {
-            key = "<leader>ca";
-            mode = "n";
-            action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
-            desc = "Code Action";
-          }
-          {
-            key = "gd";
-            mode = "n";
-            action = "<cmd>lua vim.lsp.buf.definition()<CR>";
-            desc = "Go To Definition";
-          }
-        ];
-
-        luaConfigRC.diagnostics = ''
-          vim.diagnostic.config({
-            virtual_text = true,
-          })
-        '';
-
-        lsp = {
-          enable = true;
-          formatOnSave = true;
-          inlayHints.enable = true;
-
-          servers = {
-            clangd.package = null;
-            rust_analyzer.package = null;
-          };
-        };
-
-        debugger = {
-          nvim-dap = {
-            enable = true;
-            ui.enable = true;
-          };
-        };
-
-        languages = {
-          enableLSP = true;
-          enableTreesitter = true;
-          enableFormat = true;
-
-          clang = {
-            enable = true;
-            lsp.enable = true;
-            dap.enable = true;
-          };
-
-          rust = {
-            enable = true;
-            lsp.enable = true;
-          };
-
-          go = {
-            enable = true;
-            lsp.enable = true;
-          };
-
-          ts = {
-            enable = true;
-            lsp.enable = true;
-            format.enable = true;
-          };
-
-          html.enable = true;
-          css.enable = true;
-
-          markdown.enable = true;
-
-          nix = {
-            enable = true;
-            lsp.server = "nil";
-            format.type = [ "nixfmt" ];
-          };
-
-          typst = {
-            enable = true;
-            lsp.enable = true;
-          };
-        };
-      };
-    };
-  };
-
   programs.helix = {
     enable = true;
 
@@ -191,6 +55,9 @@
           tab-width = 4;
           unit = "    ";
         };
+      }
+      {
+        name = "python";
       }
       {
         name = "cpp";
@@ -326,7 +193,6 @@
       {
         name = "typst";
         auto-format = true;
-        # tinymist handles formatting via LSP
         language-servers = [ "tinymist" ];
       }
 
@@ -348,7 +214,6 @@
       {
         name = "nix";
         auto-format = true;
-        # nixfmt is provided by the nixfmt-rfc-style package
         formatter = {
           command = "nixfmt";
         };
@@ -396,8 +261,6 @@
           "--fallback-style=llvm"
           "--header-insertion=iwyu"
           "--pch-storage=memory"
-          # ERROR: Makes Clangd crash on llvm_latest
-          # "--cross-file-rename"
           "--log=error"
         ];
         config = {

@@ -1,4 +1,3 @@
-# Git — user identity, default branch, and global config.
 {
   programs.git = {
     enable = true;

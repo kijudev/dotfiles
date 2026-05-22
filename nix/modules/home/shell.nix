@@ -1,4 +1,3 @@
-# Shell — Zsh with completions, autosuggestions, syntax highlighting, and oh-my-zsh.
 {
   programs.zsh = {
     enable = true;

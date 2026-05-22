@@ -1,6 +1,4 @@
-# Users — defines the kiju user account, group memberships, and default shell.
 { pkgs, ... }:
-
 {
   users.users.kiju = {
     isNormalUser = true;
@@ -12,6 +10,7 @@
       "libvirtd"
       "wireshark"
     ];
+
     shell = pkgs.zsh;
   };
 }

@@ -3,34 +3,26 @@
 
 {
   home.packages = with pkgs; [
-    # Editors & IDEs
-    zed-editor
-    vscode-fhs
-
-    # Dev tools
+    # Dev
     flyctl
-    nixd
-    package-version-server
     cloc
     nixfmt-rfc-style
-    prettier
-    nodejs_24
-    pnpm
+    nixd
+    package-version-server
+    zed-editor
+    github-copilot-cli
+    python315
+    lazygit
+    yazi
 
-    # Apps
+    # Personal
     vlc
     obsidian
     xournalpp
-    rawtherapee
     discord
     protonvpn-gui
     protonmail-desktop
-    gnome-tweaks
-    gnomeExtensions.blur-my-shell
     onlyoffice-desktopeditors
-
-    # Clankers
-    github-copilot-cli
-    gemini-cli
+    prismlauncher
   ];
 }

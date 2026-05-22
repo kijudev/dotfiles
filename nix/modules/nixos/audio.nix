@@ -1,4 +1,3 @@
-# Audio configuration — PipeWire with ALSA, PulseAudio compatibility, and JACK support.
 {
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

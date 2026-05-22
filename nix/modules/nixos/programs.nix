@@ -1,22 +1,15 @@
-# System programs — Firefox, Zsh, Flatpak, GPG agent, Steam, and system-level packages.
-{ pkgs, inputs, ... }:
-
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     lshw
     tpm2-tools
     sbctl
-
-    # Language servers
-    nil # Nix
-    marksman # Markdown
-    tinymist # Typst
-
-    # Networking bullshit
-    # gns3-gui
+    ventoy
+    nil
+    marksman
+    tinymist
     tcpdump
     cisco-packet-tracer_9
-
     wl-clipboard
     xclip
   ];
@@ -42,8 +35,11 @@
     package = pkgs.wireshark;
   };
 
-  # Wireshark USB traffic capture
   services.udev.extraRules = ''
     SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
   '';
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.10"
+  ];
 }

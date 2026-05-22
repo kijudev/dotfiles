@@ -11,8 +11,6 @@
 
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-
-    nvf.url = "github:notashelf/nvf";
   };
 
   outputs =
@@ -31,13 +29,20 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./configuration.nix
+
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.kiju = import ./home.nix;
               home-manager.extraSpecialArgs = { inherit inputs outputs; };
+
+              # Avoid activation failures when existing files would be clobbered.
+              home-manager.backupFileExtension = "hm-bak";
+
+              home-manager.users.kiju = import ./home.nix;
+
             }
+
             inputs.stylix.nixosModules.stylix
           ];
         };

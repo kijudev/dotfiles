@@ -1,4 +1,3 @@
-# Networking — hostname, NetworkManager, CUPS printing, OpenSSH, and eduroam profile.
 {
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
