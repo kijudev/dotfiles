@@ -1,60 +1,35 @@
 { pkgs, ... }:
-
 {
   home.packages = with pkgs; [
-    flyctl
     cloc
-    nixfmt
-    nixd
-    package-version-server
-    zed-editor
-    github-copilot-cli
-    python315
     lazygit
     yazi
     htop
-    goose
     httpie
-    httpie-desktop
+    lshw
+    tcpdump
+    tpm2-tools
+    sbctl
+    wl-clipboard
+    xclip
+    flyctl
+    python315
 
-    clang
-    clang-tools
+    claude-code
+    github-copilot-cli
+    goose
 
-    go
-    gopls
-
-    cargo
-    rustc
-    rust-analyzer
-    rustfmt
-    clippy
-
-    ghc
-    cabal-install
-    haskell-language-server
-    ormolu
-
-    ocaml
-    dune_3
-    opam
-    ocamlPackages.ocaml-lsp
-
-    clojure
-    leiningen
-    clojure-lsp
-
-    nodejs
-    typescript
-    typescript-language-server
-    vscode-langservers-extracted
-    tailwindcss-language-server
+    nixfmt
+    nixd
+    nil
+    marksman
     prettier
-
-    zig
-    zls
-
     typst
+    tinymist
+    package-version-server
+    zed-editor
 
+    httpie-desktop
     vlc
     obsidian
     xournalpp
@@ -62,8 +37,6 @@
     proton-vpn
     protonmail-desktop
     onlyoffice-desktopeditors
-    prismlauncher
-    claude-code
     galaxy-buds-client
     blanket
   ];

@@ -15,32 +15,25 @@
     {
       self,
       nixpkgs,
-      home-manager,
       ...
     }@inputs:
     let
       inherit (self) outputs;
+
+      mkHost =
+        name:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/${name}
+            { networking.hostName = name; }
+          ];
+        };
     in
     {
       nixosConfigurations = {
-        kiju = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./configuration.nix
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs outputs; };
-
-              # home-manager.backupFileExtension = "hm-bak";
-              home-manager.users.kiju = import ./home.nix;
-            }
-
-            inputs.stylix.nixosModules.stylix
-          ];
-        };
+        laptop = mkHost "laptop";
+        homelab = mkHost "homelab";
       };
     };
 }

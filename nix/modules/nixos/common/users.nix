@@ -8,7 +8,6 @@
       "wheel"
       "docker"
       "libvirtd"
-      "wireshark"
     ];
 
     shell = pkgs.zsh;

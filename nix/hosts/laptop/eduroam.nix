@@ -1,9 +1,4 @@
 {
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
-  services.printing.enable = true;
-  services.openssh.enable = true;
-
   networking.networkmanager.ensureProfiles.environmentFiles = [ "/etc/secure/eduroam.env" ];
 
   networking.networkmanager.ensureProfiles.profiles = {
