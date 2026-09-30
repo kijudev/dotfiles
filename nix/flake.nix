@@ -35,5 +35,11 @@
         laptop = mkHost "laptop";
         homelab = mkHost "homelab";
       };
+
+      # Dev shell starters: `nix flake init -t ~/Dotfiles/nix#go`
+      templates = builtins.mapAttrs (name: _: {
+        path = ./shells/${name};
+        description = "${name} dev shell";
+      }) (builtins.readDir ./shells);
     };
 }

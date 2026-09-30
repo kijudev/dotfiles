@@ -7,6 +7,7 @@
     ./terminal.nix
     ./editors.nix
     ./desktop.nix
+    ./direnv.nix
   ];
 
   home = {
