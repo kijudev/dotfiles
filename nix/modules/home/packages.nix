@@ -1,12 +1,10 @@
-# User packages — apps, dev tools, and fonts installed into the home environment.
 { pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    # Dev
     flyctl
     cloc
-    nixfmt-rfc-style
+    nixfmt
     nixd
     package-version-server
     zed-editor
@@ -14,15 +12,59 @@
     python315
     lazygit
     yazi
+    htop
+    goose
+    httpie
+    httpie-desktop
 
-    # Personal
+    clang
+    clang-tools
+
+    go
+    gopls
+
+    cargo
+    rustc
+    rust-analyzer
+    rustfmt
+    clippy
+
+    ghc
+    cabal-install
+    haskell-language-server
+    ormolu
+
+    ocaml
+    dune_3
+    opam
+    ocamlPackages.ocaml-lsp
+
+    clojure
+    leiningen
+    clojure-lsp
+
+    nodejs
+    typescript
+    typescript-language-server
+    vscode-langservers-extracted
+    tailwindcss-language-server
+    prettier
+
+    zig
+    zls
+
+    typst
+
     vlc
     obsidian
     xournalpp
     discord
-    protonvpn-gui
+    proton-vpn
     protonmail-desktop
     onlyoffice-desktopeditors
     prismlauncher
+    claude-code
+    galaxy-buds-client
+    blanket
   ];
 }

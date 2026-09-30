@@ -57,9 +57,6 @@
         };
       }
       {
-        name = "python";
-      }
-      {
         name = "cpp";
         auto-format = true;
         formatter = {
@@ -91,6 +88,14 @@
         language-servers = [ "rust-analyzer" ];
       }
 
+      # --- Clojure ---
+      {
+        name = "clojure";
+        auto-format = true;
+        # clojure-lsp handles formatting via LSP
+        language-servers = [ "clojure-lsp" ];
+      }
+
       # --- JavaScript / TypeScript ---
       {
         name = "javascript";
@@ -102,7 +107,10 @@
             "babel"
           ];
         };
-        language-servers = [ "typescript-language-server" ];
+        language-servers = [
+          "typescript-language-server"
+          "tailwindcss-language-server"
+        ];
       }
       {
         name = "typescript";
@@ -114,7 +122,10 @@
             "typescript"
           ];
         };
-        language-servers = [ "typescript-language-server" ];
+        language-servers = [
+          "typescript-language-server"
+          "tailwindcss-language-server"
+        ];
       }
       {
         name = "jsx";
@@ -126,7 +137,10 @@
             "babel"
           ];
         };
-        language-servers = [ "typescript-language-server" ];
+        language-servers = [
+          "typescript-language-server"
+          "tailwindcss-language-server"
+        ];
       }
       {
         name = "tsx";
@@ -138,7 +152,10 @@
             "babel-ts"
           ];
         };
-        language-servers = [ "typescript-language-server" ];
+        language-servers = [
+          "typescript-language-server"
+          "tailwindcss-language-server"
+        ];
       }
 
       # --- HTML / CSS ---
@@ -152,7 +169,10 @@
             "html"
           ];
         };
-        language-servers = [ "vscode-html-language-server" ];
+        language-servers = [
+          "vscode-html-language-server"
+          "tailwindcss-language-server"
+        ];
       }
       {
         name = "css";
@@ -164,7 +184,10 @@
             "css"
           ];
         };
-        language-servers = [ "vscode-css-language-server" ];
+        language-servers = [
+          "vscode-css-language-server"
+          "tailwindcss-language-server"
+        ];
       }
 
       # --- Haskell ---
@@ -249,7 +272,6 @@
     ];
 
     languages.language-server = {
-
       # --- clangd (C / C++) ---
       clangd = {
         command = "clangd";
@@ -264,8 +286,6 @@
           "--log=error"
         ];
         config = {
-          # clangd inlay hints are configured via a .clangd file in the project root,
-          # not through initializationOptions
           clangd.fallbackFlags = [ "-std=c++23" ];
         };
       };
@@ -289,6 +309,11 @@
           };
           staticcheck = true;
         };
+      };
+
+      # --- clojure-lsp (Clojure) ---
+      clojure-lsp = {
+        command = "clojure-lsp";
       };
 
       # --- rust-analyzer (Rust) ---
@@ -337,6 +362,12 @@
         args = [ "--stdio" ];
       };
 
+      # --- tailwindcss-language-server (Tailwind CSS, layered onto HTML/CSS/JS/TS) ---
+      tailwindcss-language-server = {
+        command = "tailwindcss-language-server";
+        args = [ "--stdio" ];
+      };
+
       # --- haskell-language-server (Haskell) ---
       haskell-language-server = {
         command = "haskell-language-server-wrapper";
@@ -370,7 +401,6 @@
       };
 
       # --- nil (Nix) ---
-      # Tell nil to use nixfmt (from nixfmt-rfc-style) for LSP formatting requests
       nil = {
         command = "nil";
         config = {
@@ -383,7 +413,6 @@
       };
 
       # --- marksman (Markdown) ---
-      # Provides link completions, cross-file references, and document outline
       marksman = {
         command = "marksman";
         args = [ "server" ];

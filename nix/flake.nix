@@ -1,5 +1,3 @@
-# Flake entry point — defines inputs (nixpkgs, home-manager, stylix)
-# and wires them together into the nixosConfigurations output.
 {
   description = "Kiju's nix config";
 
@@ -36,11 +34,8 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
-              # Avoid activation failures when existing files would be clobbered.
-              home-manager.backupFileExtension = "hm-bak";
-
+              # home-manager.backupFileExtension = "hm-bak";
               home-manager.users.kiju = import ./home.nix;
-
             }
 
             inputs.stylix.nixosModules.stylix

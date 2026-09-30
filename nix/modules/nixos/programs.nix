@@ -4,12 +4,10 @@
     lshw
     tpm2-tools
     sbctl
-    ventoy
     nil
     marksman
     tinymist
     tcpdump
-    cisco-packet-tracer_9
     wl-clipboard
     xclip
   ];

@@ -1,34 +1,7 @@
-# My NixOS Config
+# My System Dotfiles
 
-If you value your sanity do not look at this abomination :)
-
-## Structure
-```
-.
-├── README.md
-└── nix/
-    ├── configuration.nix
-    ├── flake.nix
-    ├── flake.lock
-    ├── hardware-configuration.nix
-    ├── home.nix
-    ├── stylix.nix
-    └── modules/
-        ├── home/
-        │   ├── desktop.nix
-        │   ├── editors.nix
-        │   ├── git.nix
-        │   ├── packages.nix
-        │   ├── shell.nix
-        │   └── terminal.nix
-        └── nixos/
-            ├── audio.nix
-            ├── boot.nix
-            ├── desktop.nix
-            ├── hardware.nix
-            ├── locale.nix
-            ├── networking.nix
-            ├── programs.nix
-            ├── users.nix
-            └── virtualisation.nix
-```
+I use NixOs with flakes, Cosmic Desktop, and Helix as my main code editor.
+This setup is currently work-in-progress and will be slightly rebuilt
+to facilitate using it on my Homelab. The core per-user module is ment o be as minimal as possible.
+Dev tools, language servers, compilers etc. belong in project-specific flakes (exceptions to this rule
+are commonly used utils like Typst, Mardown or Python tooling).

@@ -1,7 +1,4 @@
-# NixOS system configuration entry point — imports all system modules and sets
-# top-level nix options (flakes, unfree packages, state version).
 { ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
