@@ -8,6 +8,7 @@
     ./editors.nix
     ./desktop.nix
     ./direnv.nix
+    ./yazi.nix
   ];
 
   home = {

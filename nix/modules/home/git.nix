@@ -9,5 +9,7 @@
 
       init.defaultBranch = "main";
     };
+
+    ignores = [ "**/.claude/settings.local.json" ];
   };
 }

@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     cloc
     lazygit
-    yazi
     htop
     httpie
     lshw
