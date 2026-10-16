@@ -21,4 +21,24 @@
   home-manager.users.kiju.home.packages = with pkgs; [
     prismlauncher
   ];
+
+  nixpkgs.overlays = [
+    (self: super: {
+      mathematica = super.mathematica.overrideAttrs (oldAttrs: {
+        version = "15.0.1";
+        src = super.requireFile {
+          name = "Wolfram_15.0.1_LIN.sh";
+          sha256 = "sha256-7N5FJoj0gTGNwY3Q+8hJGZi+ze6IRRMnwu6nLEv3cF4=";
+          message = ''
+            Download Wolfram_15.0.1_LIN.sh from wolfram.com and add it with:
+              nix-store --add-fixed sha256 Wolfram_15.0.1_LIN.sh
+          '';
+        };
+      });
+    })
+  ];
+
+  environment.systemPackages = [
+    pkgs.mathematica
+  ];
 }

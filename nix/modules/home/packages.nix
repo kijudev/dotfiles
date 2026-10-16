@@ -13,6 +13,7 @@
     xclip
     flyctl
     python315
+    just
 
     claude-code
     github-copilot-cli
