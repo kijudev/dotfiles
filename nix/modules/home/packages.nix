@@ -40,5 +40,19 @@
     onlyoffice-desktopeditors
     galaxy-buds-client
     blanket
+
+    bubblewrap
   ];
+
+  xdg.dataFile =
+    let
+      nodeVersion = "node-v26.12.0-linux-x64";
+      nodePackage = pkgs.nodejs_26;
+    in
+    {
+      "zed/node/${nodeVersion}/bin".source = "${nodePackage}/bin";
+      "zed/node/${nodeVersion}/include".source = "${nodePackage}/include";
+      "zed/node/${nodeVersion}/lib".source = "${nodePackage}/lib";
+      "zed/node/${nodeVersion}/share".source = "${nodePackage}/share";
+    };
 }
