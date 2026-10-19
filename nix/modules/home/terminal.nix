@@ -4,7 +4,7 @@
     extraConfig = ''
       background_opacity 0.875
       background_blur 32
-      font_size 13
+      font_size 12
       hide_window_decorations yes
       window_border_width 0
       window_padding_width 4 4

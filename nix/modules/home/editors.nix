@@ -88,6 +88,24 @@
         language-servers = [ "rust-analyzer" ];
       }
 
+      # --- Java ---
+      {
+        name = "java";
+        auto-format = true;
+        formatter = {
+          command = "google-java-format";
+          args = [
+            "--aosp"
+            "-"
+          ];
+        };
+        language-servers = [ "jdtls" ];
+        indent = {
+          tab-width = 4;
+          unit = "    ";
+        };
+      }
+
       # --- Clojure ---
       {
         name = "clojure";
@@ -308,6 +326,24 @@
             shadow = true;
           };
           staticcheck = true;
+        };
+      };
+
+      # --- jdtls (Java) ---
+      jdtls = {
+        command = "jdtls";
+        config = {
+          java = {
+            inlayHints.parameterNames.enabled = "all";
+            signatureHelp.enabled = true;
+            contentProvider.preferred = "fernflower";
+            completion.importOrder = [
+              "java"
+              "javax"
+              "org"
+              "com"
+            ];
+          };
         };
       };
 

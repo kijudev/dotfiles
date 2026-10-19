@@ -14,6 +14,7 @@
     flyctl
     python315
     just
+    bottles
 
     claude-code
     github-copilot-cli
