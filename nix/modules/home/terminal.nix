@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     extraConfig = ''
-      background_opacity 0.875
+      background_opacity 1
       background_blur 32
       font_size 12
       hide_window_decorations yes

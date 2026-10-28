@@ -22,6 +22,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "ventoy-1.1.10"
+    "beekeeper-studio-6.1.1"
   ];
 
   home-manager = {

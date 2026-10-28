@@ -7,6 +7,9 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
+  # Lets prebuilt binaries that Zed downloads (e.g. copilot-language-server) run
+  programs.nix-ld.enable = true;
+
   programs.wireshark = {
     enable = true;
     package = pkgs.wireshark;
@@ -16,7 +19,18 @@
     SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
   '';
 
-  users.users.kiju.extraGroups = [ "wireshark" ];
+  # VirtualBox on the KVM backend so it can run alongside libvirt/QEMU VMs.
+  # Only NAT networking is supported in this mode (no host-only vboxnet0).
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableKvm = true;
+    addNetworkInterface = false;
+  };
+
+  users.users.kiju.extraGroups = [
+    "wireshark"
+    "vboxusers"
+  ];
 
   home-manager.users.kiju.home.packages = with pkgs; [
     prismlauncher

@@ -15,6 +15,7 @@
     python315
     just
     bottles
+    beekeeper-studio
 
     claude-code
     github-copilot-cli
@@ -40,6 +41,7 @@
     onlyoffice-desktopeditors
     galaxy-buds-client
     blanket
+    gnome-solanum
 
     bubblewrap
   ];
