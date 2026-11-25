@@ -8,6 +8,7 @@
       "wheel"
       "docker"
       "libvirtd"
+      "dialout"
     ];
 
     shell = pkgs.zsh;

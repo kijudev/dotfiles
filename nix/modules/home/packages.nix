@@ -44,6 +44,8 @@
     gnome-solanum
 
     bubblewrap
+    arduino-ide
+    jetbrains.idea-community
   ];
 
   xdg.dataFile =
