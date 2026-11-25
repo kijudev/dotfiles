@@ -45,7 +45,7 @@
 
     bubblewrap
     arduino-ide
-    jetbrains.idea-community
+    jetbrains.idea-oss
   ];
 
   xdg.dataFile =
