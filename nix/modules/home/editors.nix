@@ -106,6 +106,29 @@
         };
       }
 
+      # --- Scala ---
+      {
+        name = "scala";
+        auto-format = true;
+        # metals formats via scalafmt (needs a .scalafmt.conf in the project root)
+        language-servers = [ "metals" ];
+        roots = [
+          "build.sbt"
+          "build.sc"
+          "build.mill"
+          "build.gradle"
+          "build.gradle.kts"
+          "pom.xml"
+          "project.scala"
+          ".scala-build"
+          ".bsp"
+        ];
+        indent = {
+          tab-width = 2;
+          unit = "  ";
+        };
+      }
+
       # --- Clojure ---
       {
         name = "clojure";
@@ -343,6 +366,27 @@
               "org"
               "com"
             ];
+          };
+        };
+      };
+
+      # --- metals (Scala) ---
+      metals = {
+        command = "metals";
+        config = {
+          # initializationOptions: Helix has no custom metals UI, so route
+          # status/commands through standard LSP messages and the HTTP doctor
+          isHttpEnabled = true;
+          statusBarProvider = "log-message";
+          metals = {
+            inlayHints = {
+              inferredTypes.enable = true;
+              typeParameters.enable = true;
+              implicitArguments.enable = true;
+              implicitConversions.enable = true;
+              hintsInPatternMatch.enable = true;
+            };
+            serverProperties = [ "-Xmx2G" ];
           };
         };
       };
