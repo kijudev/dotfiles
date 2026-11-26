@@ -38,6 +38,25 @@
           "line-numbers"
           "spacer"
         ];
+
+        # show dotfiles in the file explorer (space e / space E)
+        file-explorer.hidden = false;
+      };
+
+      # vim-style paragraph motions
+      keys.normal = {
+        "{" = [
+          "goto_prev_paragraph"
+          "collapse_selection"
+        ];
+        "}" = [
+          "goto_next_paragraph"
+          "collapse_selection"
+        ];
+      };
+      keys.select = {
+        "{" = "goto_prev_paragraph";
+        "}" = "goto_next_paragraph";
       };
     };
 
