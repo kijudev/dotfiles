@@ -39,8 +39,10 @@
           "spacer"
         ];
 
-        # show dotfiles in the file explorer (space e / space E)
-        file-explorer.hidden = false;
+        # show dotfiles in the file picker and file explorer (space f / space e)
+        # helix 25.07 has no separate [editor.file-explorer] section; the
+        # explorer reuses the file-picker settings
+        file-picker.hidden = false;
       };
 
       # vim-style paragraph motions
